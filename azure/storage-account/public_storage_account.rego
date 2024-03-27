@@ -28,5 +28,6 @@ policy[p] {
 }
 
 exception[p] {
-  p.name == "ddsatlantisstore"
+  p.metadata.policy == "ignore"
+  rules := ["public_storage_account"]
 }
