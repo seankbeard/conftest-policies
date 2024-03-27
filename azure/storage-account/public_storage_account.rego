@@ -27,7 +27,7 @@ policy[p] {
 	p = fugue.deny_resource_with_message(resource, "Storage Accounts should not be publicly accessible.")
 }
 
-exception[p] {
-  p.metadata.policy == "ignore"
+exception[rules] {
+  input.metadata.policy == "ignore"
   rules := ["public_storage_account"]
 }
