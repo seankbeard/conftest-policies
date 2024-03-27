@@ -10,6 +10,7 @@ azurerm_storage_account = fugue.resources("azurerm_storage_account")
 
 valid(resource) {
 	resource.allow_blob_public_access == false
+	resource.tags.policy != ignore
 }
 
 # Regula expects advanced rules to contain a `policy` rule that holds a set
@@ -25,9 +26,4 @@ policy[p] {
 	resource = azurerm_storage_account[_]
 	not valid(resource)
 	p = fugue.deny_resource_with_message(resource, "Storage Accounts should not be publicly accessible.")
-}
-
-exception[rules] {
-  input.metadata.policy == "ignore"
-  rules := ["public_storage_account"]
 }
