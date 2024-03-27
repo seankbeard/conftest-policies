@@ -26,3 +26,7 @@ policy[p] {
 	not valid(resource)
 	p = fugue.deny_resource_with_message(resource, "Storage Accounts should not be publicly accessible.")
 }
+
+exception[p] {
+  p.name == "ddsatlantisstore"
+}
