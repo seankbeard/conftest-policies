@@ -10,7 +10,6 @@ azurerm_storage_account = fugue.resources("azurerm_storage_account")
 
 valid(resource) {
 	resource.allow_blob_public_access == false
-	resource.tags.policy != ignore
 }
 
 # Regula expects advanced rules to contain a `policy` rule that holds a set
