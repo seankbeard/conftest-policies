@@ -18,6 +18,7 @@ package fugue.regula.config
 
 waivers[waiver] {
 	waiver := {
+		"rule_id": "public_ip",
 		"resource_id": "/subscriptions/c7e1709e-5e10-4b38-8968-b0fa3ca0fa1b/resourceGroups/dds-atlantis/providers/Microsoft.Network/publicIPAddresses/dds-atlantis-pip",
 	}
 }
