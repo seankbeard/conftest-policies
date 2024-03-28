@@ -24,5 +24,6 @@ policy[p] {
 policy[p] {
 	resource = azurerm_storage_account[_]
 	not valid(resource)
+	not resource.tags.policy == "ignore"
 	p = fugue.deny_resource_with_message(resource, "Storage Accounts should not be publicly accessible.")
 }
