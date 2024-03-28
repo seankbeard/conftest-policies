@@ -18,5 +18,6 @@ policy[p] {
 policy[p] {
 	resource = azurerm_public_ip[_]
 	resource
+	not resource.tags.policy == "ignore"
 	p = fugue.deny_resource_with_message(resource, "Deny all creation of public IP addresses.")
 }
